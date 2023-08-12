@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: chocolate;">
+    <center>
+    {% if form.instance.pk %}
+        <i><h1 style="color:antiquewhite">Update Student Form</h1></i>
+    {% else %}
+        <i><h1 style="color:antiquewhite">Create Student Form</h1></i>
+     {% endif %}
+        <form  method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+         {% if form.instance.pk %}
+            <b><input type="submit" value="Update"></b>
+        {% else%}
+           <b><input type="submit" value="Create"></b>
+         {% endif %}
+        </form>
+    </center>
+</body>
+</html>

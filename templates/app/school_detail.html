@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: chocolate;">
+    <center>
+        <i><h1 style="color:antiquewhite">Detail information is {{DOSI}}</h1></i>
+        <i><h1 style="color:antiquewhite">Name of the School is {{DOSI.scname}}</h1></i>
+        <i><h1 style="color:antiquewhite">Principal of the School is {{DOSI.scprincipal}}</h1></i>
+        <i><h1 style="color:antiquewhite<">Location of the School is {{DOSI.sclocation}}</h1></i>
+     {% for sto in DOSI.Student.all %}
+        <sup><h1 style="color:aqua">Name of the Student is {{sto.sname}}</h1></sup>
+        <sup><h1>Age of the Student is {{sto.sage}}</h1></sup>
+        <h1>...........................................</h1>
+    {% endfor %}
+   <b><h1 style="color:cadetblue"><a href="{% url 'update' pk=DOSI.pk %}">Update School</a></h1></b>
+   <b><h1 style="color:cadetblue"><a href="{% url 'delete' pk=DOSI.pk %}">Delete School</a></h1></b>
+        
+        
+    </center>
+</body>
+</html>
